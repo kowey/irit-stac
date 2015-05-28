@@ -219,8 +219,8 @@ def _core_parsers(klearner):
         # mk_joint(klearner, tc_decoder(decoder_mst())),
     ]
 
+    # postlabeling
     post = [
-        # postlabeling
         mk_post(klearner, decoder_last()),
         mk_post(klearner, DECODER_LOCAL),
         # mk_post(klearner, decoder_mst()),
@@ -333,15 +333,6 @@ def _evaluations():
 
 
 EVALUATIONS = _evaluations()
-
-
-"""Learners and decoders that are associated with each other.
-The idea her is that if multiple decoders have a learner in
-common, we will avoid rebuilding the model associated with
-that learner.  For the most part we just want the cartesian
-product, but some more sophisticated learners depend on the
-their decoder, and cannot be shared
-"""
 
 
 GRAPH_DOCS = [
