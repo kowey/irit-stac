@@ -11,12 +11,14 @@ from . import (clean,
                gather,
                model,
                parse,
+               preview,
                serve,
                stop)
 
 SUBCOMMANDS =\
     [
         gather,
+        preview,
         evaluate,
         count,
         clean,
