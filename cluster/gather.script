@@ -6,7 +6,7 @@
 STAC=$HOME/irit-stac
 source "$STAC/cluster/env"
 cd "$STAC"
-time irit-stac gather
+time irit-stac gather "$@"
 for i in TMP/latest/*.sparse; do
     # get all the labels
     head -n 1 "$i" > "$i.stripped"
