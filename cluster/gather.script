@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=irit-stac-gather
 #SBATCH --output=irit-stac-gather-%j.out
+## REMEMBER TO STRIP ONE HASH MARK OFF THESE
 ##SBATCH --mail-type=END
 ##SBATCH --mail-user=YOUR_EMAIL_ADDRESS_HERE <=== EDIT THIS
 STAC=$HOME/irit-stac
