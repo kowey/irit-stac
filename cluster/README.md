@@ -60,12 +60,9 @@ on different aspects of the system in a shared space. One of the users
 
 8. Set up your cluster scripts (replace vim with your favourite text
    editor below). You'll need to plug in your email address and
-   absolute paths appropriate to your cluster
+   absolute paths appropriate to your cluster.
 
    ```
-   for i in env gather.script; do
-       cp cluster/$i.example cluster/$i
-   done
    vim cluster/env
    vim cluster/gather.script
    ```
