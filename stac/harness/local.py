@@ -18,6 +18,7 @@ from attelo.harness.config import (LearnerConfig,
 #                                    AstarDecoder,
 #                                    Heuristic,
 #                                    RfcConstraint)
+from attelo.decoding.baseline import (LocalBaseline)
 from attelo.decoding.mst import (MstDecoder, MstRootStrategy)
 from attelo.learning.local import (SklearnAttachClassifier,
                                    SklearnLabelClassifier)
@@ -91,8 +92,9 @@ Wouldn't want to overfit to the test corpus, now would we?
 validation on the training data)
 """
 
-TEST_EVALUATION_KEY = None
-# TEST_EVALUATION_KEY = 'maxent-AD.L_pst-tc-mst-root'
+# TEST_EVALUATION_KEY = None
+# TEST_EVALUATION_KEY = 'tc-maxent-AD.L-pst-last'
+TEST_EVALUATION_KEY = 'tc-maxent-last-iheads-AD.L-pst-tc-mst'
 """Evaluation to use for testing.
 
 Leave this to None until you think it's OK to look at the test data.
@@ -112,8 +114,8 @@ ANNOTATORS = educe.stac.corpus.METAL_STR
 Which annotators to read from during feature extraction
 """
 
-FIXED_FOLD_FILE = None
-# FIXED_FOLD_FILE = 'folds-training-2015-05-30.json'
+# FIXED_FOLD_FILE = None
+FIXED_FOLD_FILE = 'folds-training-2015-05-30.json'
 """
 Set this to a file path if you *always* want to use it for your corpus
 folds. This is for long standing evaluation experiments; we want to
@@ -124,7 +126,7 @@ NB. It's up to you to ensure that the folds file makes sense
 """
 
 
-DECODER_LOCAL = decoder_local(0.2)
+DECODER_LOCAL = decoder_local(0.5)
 "local decoder should accept above this score"
 
 
